@@ -10,6 +10,7 @@
 // import necessary modules
 import java.util.Scanner;
 import java.util.Random;
+
 public class RockPaperScissors {
 
     // finds and returns the winner if there is one
@@ -37,13 +38,14 @@ public class RockPaperScissors {
             return 0;
         } else if (user + 1 == computerWinVar) { // computer wins
             return 1;
-        } else if (userWinVar - 1 == computer){ // player wins
+        } else if (userWinVar - 1 == computer) { // player wins
             return 2;
         } else { // should never occur
             System.out.println("impossible");
             return 3;
         }
     }
+
     public static void main(String[] args) {
         // explanation
         System.out.println("This is rock paper scissors, guess one of the three and beat the computer!");
@@ -61,21 +63,21 @@ public class RockPaperScissors {
 
         // enables a loop so the user can play multiple rounds
         // breaks when someone wins the specified number of rounds
-        while(numRoundsInt > userWins && numRoundsInt > computerWins) {
+        while (numRoundsInt > userWins && numRoundsInt > computerWins) {
             Random rand = new Random(); // creates random class var, kind of like the Scanner class
             int int_random = rand.nextInt(UPPERBOUND);
 
             // loops until the user inputs a valid input
             boolean invalidGuess = true;
-            while(invalidGuess == true) {
+            while (invalidGuess == true) {
                 invalidGuess = false;
                 // gets users input
                 System.out.print("\nRock paper Scissors: ");
                 System.out.println("input: 1 2 3, r p s, or rock paper scissors");
                 String userInput = myScanner.nextLine();
-                
+
                 // puts the users input to lower case to avoid any accidents
-                String userInputLower = userInput.toLowerCase();  
+                String userInputLower = userInput.toLowerCase();
 
                 // creates an absolute input depending on which method the user used
                 if (userInputLower.equals("r") || userInputLower.equals("1") || userInputLower.equals("rock")) {
@@ -84,7 +86,8 @@ public class RockPaperScissors {
                 } else if (userInputLower.equals("p") || userInputLower.equals("2") || userInputLower.equals("paper")) {
                     userInputAbsolute = 1;
                     System.out.println("You guessed Paper");
-                } else if (userInputLower.equals("s") || userInputLower.equals("3") || userInputLower.equals("scissors")){
+                } else if (userInputLower.equals("s") || userInputLower.equals("3")
+                        || userInputLower.equals("scissors")) {
                     userInputAbsolute = 2;
                     System.out.println("You guessed Scissors");
                 } else {
