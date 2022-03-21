@@ -56,10 +56,20 @@ public class RockPaperScissors {
         int userInputAbsolute = 0;
         System.out.println("First to what number of  wins: ");
         String numRoundsString = myScanner.nextLine();
-        int numRoundsInt = Integer.parseInt(numRoundsString);
+        int numRoundsInt;
         int userWins = 0;
         int computerWins = 0;
         int ties = 0;
+
+        // makes sure the user inputs an int
+        while (true) {
+            try {
+                numRoundsInt = Integer.parseInt(numRoundsString);
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("You must input an int");
+            }
+        }
 
         // enables a loop so the user can play multiple rounds
         // breaks when someone wins the specified number of rounds
