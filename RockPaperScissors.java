@@ -8,8 +8,8 @@
 */
 
 // import necessary modules
-import java.util.Scanner;
 import java.util.Random;
+import java.util.Scanner;
 
 public class RockPaperScissors {
 
@@ -48,7 +48,9 @@ public class RockPaperScissors {
 
   public static void main(String[] args) {
     // explanation
-    System.out.println("This is rock paper scissors, guess one of the three and beat the computer!");
+    System.out.println(
+        "This is rock paper scissors, guess one of the three and beat the computer!");
+
 
     // creates/gets all manner of vars
     Scanner myScanner = new Scanner(System.in);
@@ -94,19 +96,25 @@ public class RockPaperScissors {
         String userInputLower = userInput.toLowerCase();
 
         // creates an absolute input depending on which method the user used
-        if (userInputLower.equals("r") || userInputLower.equals("1") || userInputLower.equals("rock")) {
+        if (userInputLower.equals(
+            "r") || userInputLower.equals("1") || userInputLower.equals("rock")) {
           userInputAbsolute = 0;
           System.out.println("You guessed Rock");
-        } else if (userInputLower.equals("p") || userInputLower.equals("2") || userInputLower.equals("paper")) {
+
+        } else if (userInputLower.equals(
+            "p") || userInputLower.equals("2") || userInputLower.equals("paper")) {
           userInputAbsolute = 1;
           System.out.println("You guessed Paper");
+
         } else if (userInputLower.equals("s") || userInputLower.equals("3")
-            || userInputLower.equals("scissors")) {
+              || userInputLower.equals("scissors")) {
           userInputAbsolute = 2;
           System.out.println("You guessed Scissors");
+
         } else {
           System.out.println("Invalid guess, please try again");
           invalidGuess = true;
+
         }
       }
 
@@ -136,9 +144,11 @@ public class RockPaperScissors {
 
     // once either side has one prints the total score
     if (userWins > computerWins) {
-      System.out.println("Congratulation you won!" + "\nThe score was " + userWins + " - " + computerWins);
+      System.out.println(
+          "Congratulation you won!" + "\nThe score was " + userWins + " - " + computerWins);
     } else {
-      System.out.println("The computer won!" + "\nThe score was " + computerWins + " - " + userWins);
+      System.out.println(
+          "The computer won!" + "\nThe score was " + computerWins + " - " + userWins);
     }
     System.out.println("There were " + ties + " ties");
   }
